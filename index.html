@@ -1,10 +1,70 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>JetVerzendt</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/controllers/MainController.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
 
-<body>
-</body>
-</html>
+<body ng-app="jetverzendt" ng-controller="MainController">
+    <form name="form" class="css-form" novalidate>    
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">            	
+                <h1>Inschrijfformulier</h1>
+                <form name="addPerson" class="css-form" ng-repeat="addPerson" novalidate>
+                
+                    <div class="col-lg-6 form-height"><input type="text" ng-model="nameFirst" name="nameFirst" class="form-control" placeholder="{{ details.nameFirst }}" aria-describedby="addon1" required="">
+                        <div ng-show="form.$submitted || form.nameFirst.$touched">
+                        <div ng-show="form.nameFirst.$error.required" class="validation-message">{{ errors.nameFirstEmpty }}</div>
+                    </div>
+                </div>
+                	<div class="col-lg-6 form-height">
+                    	<input type="text" ng-model="nameLast" name="nameLast" class="form-control" placeholder="{{ details.nameLast }}" aria-describedby="addon1" required="">
+                    	<div ng-show="form.$submitted || form.nameLast.$touched">
+                    		<div ng-show="form.nameLast.$error.required"  class="validation-message">{{ errors.nameLastEmpty }}</div>
+                		</div>
+           			</div>
+            		<div class="col-sm-12 form-height"><input type="email" ng-model="email" name="email" class="form-control" placeholder="{{ details.email }}" aria-describedby="addon1" required="">
+                		<div ng-show="form.$submitted || form.email.$touched">
+                    		<span ng-show="form.email.$error.required" class="validation-message">{{ errors.emailEmpty }}</span>
+                    		<span ng-show="form.email.$error.email" class="validation-message">{{ errors.emailInvalid }}</span>
+                		</div>
+            		</div>
+            </form>
+      
+		<div class="col-lg-12 form-height"><button type="button" class="btn btn-sm btn-default" ng-model="addPerson"><img src="images/glyphicons-433-plus.png" class="icon"/>{{ buttons.addPerson }}</button></div>
+		
+        
+        
+        
+        
+	<div class="col-lg-12">		
+<input type="checkbox" ng-model="addCompany"> {{ buttons.addCompany }}
+</div>
+<div ng-show="addCompany">
+         <div class="col-lg-12 form-height"><input type="text" ng-model="nameCompany" name="nameCompany" class="form-control" placeholder="{{ details.nameCompany }}" aria-describedby="addon1" required="">
+                        <div ng-show="form.$submitted || form.nnameCompany.$touched">
+                        <div ng-show="form.nameCompany.$error.required" class="validation-message">{{ errors.nameCompanyEmpty }}</div>
+                    </div>
+                </div>
+                	<div class="col-lg-6 form-height">
+                    	<input type="number" ng-model="kvkCompany" name="kvk" class="form-control" placeholder="{{ details.kvkCompany }}" aria-describedby="addon1" required="">
+                    	<div ng-show="form.$submitted || form.kvk.$touched">
+                    		<div ng-show="form.kvk.$error.required"  class="validation-message">{{ errors.kvkCompanyEmpty }}</div>
+                		</div>
+           			</div>
+                    <div class="col-lg-6 form-height">
+                    	<input type="number" ng-model="btwCompany" name="btw" class="form-control" placeholder="{{ details.btwCompany }}" aria-describedby="addon1" required="">
+                    	<div ng-show="form.$submitted || form.btw.$touched">
+                    		<div ng-show="form.btw.$error.required"  class="validation-message">{{ errors.btwCompanyEmpty }}</div>
+                		</div>
+           			</div>
+                    </div>
+                    <div class="col-lg-12"><button type="submit">{{ buttons.save }}</button></div>

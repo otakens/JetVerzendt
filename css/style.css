@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+html {
+}
+
+body {
+
+}
+
+.form-height {
+	height: 60px;
+}
+
+.validation-message {
+	font-size: 12px;
+	color: darkred;
+} 
+
+.icon {
+	height: 12px;
+	width: 12px;
+	margin-right: 10px;
+}

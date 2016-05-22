@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JetVerzendt</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/controllers/MainController.js"></script>
+    </head>
+
+    <body ng-app="jetverzendt" ng-controller="MainController">
+    <header>
+    <div>logo</div>
+    <div>help</div>
+    <div>info</div>
+    <div>settings</div>
+    </header>
+    
+    <main>
+    <div>invoeren</div>
+    <div>overzicht</div>
+    <div>Adresboek</div>
+    <div>Pickup</div>
+        <div class="row">
+          <div class="col-sm-4">
+            	<h1>Ontvanger - adresboek</h1>
+            	<div class="col-sm-12"><input type="text" class="form-control" placeholder="Bedrijfsnaam" aria-describedby="addon1"></div>
+				<div class="col-sm-8"> <input type="text" class="form-control" placeholder="Postcode" aria-describedby="addon1"></div>
+				<div class="col-sm-4"> <input type="text" class="form-control" placeholder="Huisnummer" aria-describedby="addon1"></div>
+                <div class="col-sm-6"> <input type="text" class="form-control" placeholder="Straat" aria-describedby="addon1"></div>
+				<div class="col-sm-6"> <input type="text" class="form-control" placeholder="Plaats" aria-describedby="addon1"></div>
+			  <div class="col-sm-12"><input type="text" class="form-control" placeholder="Adresregel 2" aria-describedby="addon1"></div>
+			  <div class="col-sm-12">
+				  <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Land<span class="caret"></span></button>
+				  <ul class="dropdown-menu">
+					  <li role="presentation"><a href="#">Nederland</a></li>
+					  <li role="presentation"><a href="#">Belgie</a></li>
+				  </ul>
+			  </div>
+                <div class="col-sm-6"> <input type="text" class="form-control" placeholder="Contactpersoon" aria-describedby="addon1"></div>
+				<div class="col-sm-6"> <input type="text" class="form-control" placeholder="Referentie" aria-describedby="addon1"></div>
+                <div class="col-sm-6"> <input type="text" class="form-control" placeholder="Telefoonnummer" aria-describedby="addon1"></div>
+		    <div class="col-sm-6"> <input type="text" class="form-control" placeholder="Email" aria-describedby="addon1"></div>
+				
+                   
+            <div class="col-sm-12">
+              <div class="input-group"><span class="input-group-addon"><input type="radio"></span>
+                    <input type="text" class="form-control" placeholder="Opslaan in adresboek">
+                  </div>
+              </div>
+          </div>
+            <div class="col-sm-4">
+            <h1>Verzendmethode</h1>
+                        	<p>bezorgdienst</p>
+                <p>type verzending</p>
+                <p>aantal - referentie</p>
+                <p>Interne referentie</p>
+                <p>kp - np</p>
+          </div>
+
+            <div class="col-sm-4">
+            <h1>Verzendopties</h1>
+            	<p>Ontvanger</p>
+                <p>Zaterdag levering</p>
+                <p>Pickup</p>
+                <p>datum</p>
+            
+            </div>
+        </div>
+        <div>
+        <p>Volgende zending</p>
+        <p>versturen</p>
+        </div>
+        </main>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    </body>
+</html>
