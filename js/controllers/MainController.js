@@ -1,5 +1,6 @@
 app.controller('MainController', ['$scope', function($scope) {
 
+
 $scope.details = { 
 	nameFirst: "Voornaam",
 	nameLast: "Achternaam",
