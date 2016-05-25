@@ -8,38 +8,38 @@
         <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/controllers/MainController.js"></script>
-        <script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/bootstrap.js"></script>
     </head>
 
 <body ng-app="jetverzendt" ng-controller="MainController" class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6">              
-        <h1>Inschrijfformulier</h1>
-        <form name="form" ng-submit="submit()" class="css-form" novalidate>
+	<div class="col-lg-3"></div>
+	<div class="col-lg-6">            	
+		<h1>Inschrijfformulier</h1>
+		<form name="form" class="css-form" novalidate>
 
             <div ng-repeat="index in indices()">
 
-                <div class="col-lg-6 form-height" >
-                    <input type="text" ng-model="nameFirst" name="nameFirst[{{ index }}]" class="form-control" placeholder="{{ details.nameFirst }}" required>
-                    <div ng-show="form.$submitted || form.nameFirst.$touched">
-                        <div ng-show="form.nameFirst.$error.required" class="validation-message">{{ errors.nameFirstEmpty }}</div>
-                    </div>
+    			<div class="col-lg-6 form-height" >
+    				<input type="text" ng-model="nameFirst" name="nameFirst[{{ index }}]" class="form-control" placeholder="{{ details.nameFirst }}" required>
+    				<div ng-show="form.$submitted || form.nameFirst.$touched">
+                		<div ng-show="form.nameFirst.$error.required" class="validation-message">{{ errors.nameFirstEmpty }}</div>
+                	</div>
                 </div>
                 
                 <div class="col-lg-6 form-height">
-                    <input type="text" ng-model="nameLast" name="nameLast[{{ index }}]" class="form-control" placeholder="{{ details.nameLast }}" required>
-                    <div ng-show="form.$submitted || form.nameLast.$touched">
-                        <div ng-show="form.nameLast.$error.required"  class="validation-message">{{ errors.nameLastEmpty }}</div>
-                    </div>
+    				<input type="text" ng-model="nameLast" name="nameLast[{{ index }}]" class="form-control" placeholder="{{ details.nameLast }}" required>
+    				<div ng-show="form.$submitted || form.nameLast.$touched">
+    					<div ng-show="form.nameLast.$error.required"  class="validation-message">{{ errors.nameLastEmpty }}</div>
+                	</div>
                 </div>
                 
                 <div class="col-sm-12 form-height">
-                    <input type="email" ng-model="email" name="email[{{ index }}]" class="form-control" placeholder="{{ details.email }}" required>
-                    <div ng-show="form.$submitted || form.email.$touched">
-                        <span ng-show="form.email.$error.required" class="validation-message">{{ errors.emailEmpty }}</span>
-                        <span ng-show="form.email.$error.email" class="validation-message">{{ errors.emailInvalid }}</span>
-                    </div>
+                	<input type="email" ng-model="email" name="email[{{ index }}]" class="form-control" placeholder="{{ details.email }}" required>
+                	<div ng-show="form.$submitted || form.email.$touched">
+                		<span ng-show="form.email.$error.required" class="validation-message">{{ errors.emailEmpty }}</span>
+                		<span ng-show="form.email.$error.email" class="validation-message">{{ errors.emailInvalid }}</span>
+                	</div>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                 </button>
             </div>
 
-            <div class="col-lg-12">     
+            <div class="col-lg-12 form-height">		
                 <input type="checkbox" ng-model="addCompany"> {{ buttons.addCompany }}
             </div>
     
@@ -78,11 +78,11 @@
                 
             </div>
             
-            <div class="col-lg-12 form-height">
-                <input type="submit" id="submit" value="Inschrijven" />
-            </div>
-        </form>
-    </div>
+        	<div class="col-lg-12">
+            	<button type="sumbit" ng-click="formResult(indices)">{{ buttons.save }}</button>
+			</div>
+		</form>
+	</div>
     <div class="col-lg-3"></div>
 </body>
 </html>
